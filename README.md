@@ -87,5 +87,5 @@ const news = require("daily-news-ts")
 <hr>
 
 Released on the [MIT license](https://choosealicense.com/licenses/mit/).<br>
-See at [NPMJS]().<br>
-See at [GITHUB]().
+See at [NPMJS](https://www.npmjs.com/package/daily-news-ts).<br>
+See at [GITHUB](https://github.com/0zelot/daily-news-ts).
