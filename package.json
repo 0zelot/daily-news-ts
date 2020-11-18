@@ -1,6 +1,6 @@
 {
   "name": "daily-news-ts",
-  "version": "1.0.0",
+  "version": "1.0.7",
   "description": "Library for displaying Google News RSS, weather, cryptocurrency rates, current moon phase etc.",
   "main": "lib/index.js",
   "scripts": {
@@ -10,7 +10,8 @@
     "prepare": "npm run build",
     "preversion": "npm run lint",
     "version": "npm run format && git add -A src",
-    "postversion": "git push && git push --tags"
+    "postversion": "git push && git push --tags",
+    "postinstall": "node lib/postinstall.js"
   },
   "repository": {
     "type": "git",
