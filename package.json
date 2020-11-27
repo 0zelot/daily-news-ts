@@ -19,14 +19,25 @@
   },
   "keywords": [
     "daily news",
+    "searching news",
+    "google feed news rss"
     "google news",
     "weather",
-    "forecast",
+    "weather forecast",
+    "current weather",
     "moon",
-    "phase",
+    "moon phase",
+    "moon info",
+    "full moon",
+    "moon calc"
     "crypto",
     "cruptocurrency",
-    "rates"
+    "cryptocurrency rates",
+    "bitcoin rates",
+    "ethereum rates",
+    "bitcoin cash rates",
+    "litecoin rates",
+    "stellar rates"
   ],
   "author": "Ozelot",
   "license": "MIT",

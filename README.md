@@ -45,7 +45,7 @@ const news = require("daily-news-ts")
 * **searchNews(LANG, COUNTRY, QUERY)**<br>
     Example:
     ```
-    news.getNews("en", "us", "apple").then(json => {
+    news.searchNews("en", "us", "apple").then(json => {
         console.log(json);
     })
     ```
@@ -88,4 +88,4 @@ const news = require("daily-news-ts")
 
 Released on the [MIT license](https://choosealicense.com/licenses/mit/).<br>
 See at [NPMJS](https://www.npmjs.com/package/daily-news-ts).<br>
-See at [GITHUB](https://github.com/0zelot/daily-news-ts).
+See at [GITHUB](https://github.com/0zelot/daily-news-ts).<br>
