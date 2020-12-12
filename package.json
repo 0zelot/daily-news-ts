@@ -1,7 +1,7 @@
 {
   "name": "daily-news-ts",
-  "version": "1.0.8",
-  "description": "Library for displaying Google News RSS, weather, cryptocurrency rates, current moon phase etc.",
+  "version": "1.0.9",
+  "description": "Library for displaying Google News RSS, weather, cryptocurrency rates, current moon phase, last played songs on the radio, down services etc.",
   "main": "lib/index.js",
   "scripts": {
     "build": "tsc",
@@ -37,7 +37,18 @@
     "ethereum rates",
     "bitcoin cash rates",
     "litecoin rates",
-    "stellar rates"
+    "stellar rates",
+    "bitcoin",
+    "radio",
+    "radio last played",
+    "eska",
+    "rmf fm",
+    "rmf maxxx",
+    "vox fm",
+    "radio zet",
+    "down services",
+    "downdetector",
+    "down detector"
   ],
   "author": "Ozelot",
   "license": "MIT",

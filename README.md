@@ -13,7 +13,12 @@ The library allows you to retrieve the following informations:
     * trajectory,
     * constellation,
 * cryptocurrency rates (from GDAX API)
-    * rates and images for: Bitcoin, Ether, Bitcoin Cash, Litecoin, Stellar.
+    * rates and images for: Bitcoin, Ether, Bitcoin Cash, Litecoin, Stellar,
+* down services (from downdetector.com - scraping)
+* rast played music on the radio (from radiospis.pl - scraping)
+    * 5 polish radio stations: ESKA, RMF FM, RMF MAXXX, RADIO ZET, VOX FM,
+    * last played songs,
+    * radio station's logo.
 
 # Installation and usage
 
@@ -82,8 +87,26 @@ const news = require("daily-news-ts")
         console.log(json);
     })
     ```
-    <br>
 
+* **getDown()**<br>
+    Example:
+    ```
+    news.getDown().then(json => {
+        console.log(json);
+    });
+    ```
+
+* **getRadio()**<br>
+    Example:
+    ```
+    news.getRadio().then(json => {
+        console.log(json);
+        console.log(json.data["ESKA"].music); // last played on ESKA
+        console.log(json.data["ESKA"].music["FULL NAME"]); // URL to specified song
+    });
+    ```
+
+    <br>
 <hr>
 
 Released on the [MIT license](https://choosealicense.com/licenses/mit/).<br>
