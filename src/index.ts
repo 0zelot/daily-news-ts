@@ -6,5 +6,7 @@ export = {
     ...require("./functions/searchnews"),
     ...require("./functions/imagenews"),
     ...require("./functions/radio"),
-    ...require("./functions/downdetector")
+    ...require("./functions/downdetector"),
+    ...require("./functions/songs"),
+    ...require("./functions/lyrics")
 }
