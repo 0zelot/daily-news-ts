@@ -1,12 +1,17 @@
 import fetch from "node-fetch";
 import config from "../config";
 
-const getWeather = async (lang: string, degree: string, query: string) => {
-    let response;
-    if(lang && degree && query) {
-        let result = await fetch(`${config.url}/api/weather/${lang}/${degree}?q=${query}`, config.headers);
+const getWeather = async (type: string, lang: string, units: string, place: string) => {
+    if(type && lang && units) {
+        let p;
+        if(place.includes(",")) {
+            p = place.split(",");
+        } else {
+            p = place;
+        }
         try {
-            response = await result.json();
+            const result = await fetch(`${config.url}/api/weather/${type}/${lang}/${units}?place=${p}&lat=${p[0] || null}&lon=${p[1] || null}`);
+            return await result.json();
         } catch {
             return ({
                 success: false,
@@ -16,11 +21,9 @@ const getWeather = async (lang: string, degree: string, query: string) => {
     } else {
         return ({
             success: false,
-            error: "Required parameters: lang, degree, query. See readme for help."
+            error: "Invalid parameters: type, lang, units. See docs for more."
         });
     }
-
-    return response;
 }
 
 export = {getWeather};

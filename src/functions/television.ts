@@ -1,9 +1,9 @@
 import fetch from "node-fetch";
 import config from "../config";
 
-const getMoon = async () => {
+const getTV = async (station: string) => {
     try {
-        const result = await fetch(`${config.url}/api/moon`);
+        const result = await fetch(`${config.url}/api/television/${station || "ALL"}`);
         return await result.json();
     } catch {
         return ({
@@ -13,4 +13,4 @@ const getMoon = async () => {
     }
 }
 
-export = {getMoon};
+export = {getTV};

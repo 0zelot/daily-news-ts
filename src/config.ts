@@ -1,10 +1,3 @@
-const url = "https://daily-news-api.herokuapp.com";
+const url = "https://open-api.klonba.ml";
 
-const headers = {
-    method: "GET",
-    headers: {
-        "User-Agent": "library-ts"
-    }
-}
-
-export default {url, headers};
+export default {url};

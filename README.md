@@ -1,32 +1,5 @@
 # Description
-The library allows you to retrieve the following information:
-* news (from Google News RSS)
-    * general news,
-    * news by categories,
-    * searching news,
-    * article's image,
-* weather (from MSN)
-    * current weather for specified city,
-    * forecast for specified city,
-* moon (from mooncalc)
-    * phase,
-    * trajectory,
-    * constellation,
-* cryptocurrency rates (from GDAX API)
-    * rates and images for: Bitcoin, Ether, Bitcoin Cash, Litecoin, Stellar,
-* down services (from downdetector.com - scraping)
-* last played music on the radio (from radiospis.pl - scraping)
-    * 5 polish radio stations: ESKA, RMF FM, RMF MAXXX, RADIO ZET, VOX FM,
-    * last played songs,
-    * radio station's logo.
-* search songs (from genius)
-    * artist and title
-* lyrics and information about song (from genius)
-    * song lyrics
-    * information about song
-    * information about artist
-    * information about album
-    * images
+Simple library for [open-api.klonba.ml](https://open-api.klonba.ml).
 
 # Installation and usage
 
@@ -38,98 +11,69 @@ const news = require("daily-news-ts")
 
 # Guide
 
-* **getNews(LANG, COUNTRY)**<br>
+* **getNews(LANG, COUNTRY, ALL | TOPIC, QUERY)**<br>
     Example:
     ```
-    news.getNews("en", "us").then(json => {
-        console.log(json);
-    })
-    ```
+    await news.getNews("pt", "br", "SPORTS")
 
-* **getNews(LANG, COUNTRY, CATEGORY)**<br>
-    Categories: `WORLD`, `NATION`, `BUSINESS`, `TECHNOLOGY`, `ENTERTAINMENT`, `SPORTS`, `SCIENCE`, `HEALTH`.<br><br>
-    Example:
+    await news.getNews("en", "us", "ALL", "SpaceX")
     ```
-    news.getNews("pl", "pl", "TECHNOLOGY").then(json => {
-        console.log(json);
-    })
-    ```
+    Topics: `WORLD`, `NATION`, `BUSINESS`, `TECHNOLOGY`, `ENTERTAINMENT`, `SPORTS`, `SCIENCE`, `HEALTH`
 
-* **searchNews(LANG, COUNTRY, QUERY)**<br>
-    Example:
-    ```
-    news.searchNews("en", "us", "apple").then(json => {
-        console.log(json);
-    })
-    ```
 
-* **imageNews(LINK TO ARTICLE)**<br>
+* **getWeather(TYPE, LANG, UNITS, QUERY)**<br>
+    Units types: `C`, `F`.<br><br>
     Example:
     ```
-    news.imageNews("https://spidersweb.pl/2020/11/xcloud-na-pc-windows-tak-dziala.html").then(json => {
-        console.log(json);
-    })
-    ```
+    await news.getWeather("city", "en", "f", "London")
 
-* **getWeather(LANG, DEGREE, QUERY)**<br>
-    Degree types: `C`, `F`.<br><br>
-    Example:
-    ```
-    news.getWeather("es", "C", "Madrid").then(json => {
-        console.log(json);
-    })
+    await news.getWeather("location", "es", "c", "55,37")
     ```
 
 * **getMoon()**<br>
     Example:
     ```
-    news.getMoon().then(json => {
-        console.log(json);
-    })
+    await news.getMoon()
     ```
 
 * **getCrypto()**<br>
     Example:
     ```
-    news.getCrypto().then(json => {
-        console.log(json);
-    })
+    await news.getCrypto()
     ```
 
-* **getDown()**<br>
+* **getDownServices()**<br>
     Example:
     ```
-    news.getDown().then(json => {
-        console.log(json);
-    });
+    await news.getDownServices()
     ```
 
-* **getRadio()**<br>
+* **getRadio(NAME || ALL)**<br>
     Example:
     ```
-    news.getRadio().then(json => {
-        console.log(json);
-        console.log(json.data["ESKA"].music); // last played on ESKA
-        console.log(json.data["ESKA"].music["FULL NAME"]); // URL to specified song
-    });
+    await news.getRadio("ALL")
+
+    await news.getRadio("RMF_FM")
+    ```
+    Stations: `ESKA`, `RMF_FM`, `RMF_MAXXX`, `ZET`, `VOX_FM`
+
+* **getTV(NAME || ALL)**<br>
+    Example:
+    ```
+    await news.getTV("ALL")
+
+    await news.getTV("TVN_SIEDEM")
+    ```
+    Stations: `TVP_1`, `TVP_2`, `POLSAT`, `TVN`, `TVN_SIEDEM`
+
+* **getLyrics(QUERY, ONLY LYRICS?, LIMIT)**<br>
+    Example:
+    ```
+    await news.getLyrics("Adele", true, 3)
+
+    await news.getLyrics("faded", false, 1)
     ```
 
-* **searchSongs(QUERY)**<br>
-    Example:
-    ```
-    news.searchSongs("Alan Walker").then(json => {
-        console.log(json);
-    })
-    ```
-
-* **getSong(ID)**<br>
-    ID - song's Genius ID, you can get it through `searchSongs()` function.
-    Example:
-    ```
-    news.getSong(2396871).then(json => {
-        console.log(json);
-    })
-    ```
 
     <br>
 <hr>

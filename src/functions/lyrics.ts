@@ -1,28 +1,17 @@
 import fetch from "node-fetch";
 import config from "../config";
 
-
-const getSong = async (id: string | number) => {
-    let response;
-    if(id) {
-        try {
-            let result = await fetch(`${config.url}/api/lyrics/${id}`, config.headers);
-            const response = await result.json();
-            return response;
-        } catch {
-            return ({
-                success: false,
-                error: "Could not connect with API, not found song with this ID or bad response."
-            });
-        }
-    } else {
+const getLyrics = async (query: string, onlyLyrics: boolean, limit: number) => {
+    try {
+        const result = await fetch(`${config.url}/api/lyrics?q=${query}&onlyLyrics=${onlyLyrics}&limit=${limit || 1}`);
+        return await result.json();
+    } catch {
         return ({
             success: false,
-            error: "Required parameters: id. See readme for help."
+            error: "Could not connect with API or bad response."
         });
     }
 
-    return response;
 }
 
-export = {getSong};
+export = {getLyrics};
