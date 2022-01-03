@@ -1,5 +1,5 @@
 # Description
-Simple library for [open-api.klonba.ml](https://open-api.klonba.ml).
+Simple library for [open-api.klonba.xyz](https://open-api.klonba.xyz).
 
 # Installation and usage
 
