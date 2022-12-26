@@ -1,9 +1,9 @@
 import fetch from "node-fetch";
 import config from "../config";
 
-const getRadio = async (station: string) => {
+const getRadio = async (country: string, station: string) => {
     try {
-        const result = await fetch(`${config.url}/api/radio/${station || "ALL"}`);
+        const result = await fetch(`${config.url}/api/v2/radio/${country}/${station}`);
         return await result.json();
     } catch {
         return ({

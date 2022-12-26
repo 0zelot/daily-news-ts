@@ -3,7 +3,9 @@ import config from "../config";
 
 const getLyrics = async (query: string, onlyLyrics: boolean, limit: number) => {
     try {
-        const result = await fetch(`${config.url}/api/lyrics?q=${query}&onlyLyrics=${onlyLyrics}&limit=${limit || 1}`);
+        let url = `${config.url}/api/v2/lyrics?q=${query}&limit=${limit || 1}`;
+        if(onlyLyrics) url = `${config.url}/api/v2/lyrics?q=${query}&onlyLyrics=true&limit=${limit || 1}`;
+        const result = await fetch(url);
         return await result.json();
     } catch {
         return ({

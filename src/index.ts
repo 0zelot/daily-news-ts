@@ -4,7 +4,6 @@ export = {
     ...require("./functions/weather"),
     ...require("./functions/news"),
     ...require("./functions/radio"),
-    ...require("./functions/downdetector"),
     ...require("./functions/lyrics"),
     ...require("./functions/television"),
 }

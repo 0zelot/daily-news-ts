@@ -3,7 +3,7 @@ import config from "../config";
 
 const getTV = async (station: string) => {
     try {
-        const result = await fetch(`${config.url}/api/television/${station || "ALL"}`);
+        const result = await fetch(`${config.url}/api/television/${station}`);
         return await result.json();
     } catch {
         return ({

@@ -3,7 +3,7 @@ import config from "../config";
 
 const getCrypto = async () => {
     try {
-        const result = await fetch(`${config.url}/api/crypto`);
+        const result = await fetch(`${config.url}/api/v2/crypto`);
         return await result.json();
     } catch {
         return ({

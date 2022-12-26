@@ -4,13 +4,10 @@ import config from "../config";
 const getWeather = async (type: string, lang: string, units: string, place: string) => {
     if(type && lang && units) {
         let p;
-        if(place.includes(",")) {
-            p = place.split(",");
-        } else {
-            p = place;
-        }
+        if(place.includes(",")) p = place.split(",");
+        else p = place;
         try {
-            const result = await fetch(`${config.url}/api/weather/${type}/${lang}/${units}?place=${p}&lat=${p[0] || null}&lon=${p[1] || null}`);
+            const result = await fetch(`${config.url}/api/v2/weather/${type}/${lang}/${units}?place=${p}&lat=${p[0] || null}&lon=${p[1] || null}`);
             return await result.json();
         } catch {
             return ({
