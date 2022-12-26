@@ -42,38 +42,23 @@ const news = require("daily-news-ts")
     await news.getCrypto()
     ```
 
-* **getDownServices()**<br>
+* **getRadio(COUNTRY, NAME)**<br>
     Example:
     ```
-    await news.getDownServices()
+    await news.getRadio("DE", "1LIVE")
     ```
-
-* **getRadio(NAME || ALL)**<br>
-    Example:
-    ```
-    await news.getRadio("ALL")
-
-    await news.getRadio("RMF_FM")
-    ```
-    Stations: `ESKA`, `RMF_FM`, `RMF_MAXXX`, `ZET`, `VOX_FM`
 
 * **getTV(NAME || ALL)**<br>
     Example:
     ```
-    await news.getTV("ALL")
-
     await news.getTV("TVN_SIEDEM")
     ```
-    Stations: `TVP_1`, `TVP_2`, `POLSAT`, `TVN`, `TVN_SIEDEM`
 
 * **getLyrics(QUERY, ONLY LYRICS?, LIMIT)**<br>
     Example:
     ```
-    await news.getLyrics("Adele", true, 3)
-
-    await news.getLyrics("faded", false, 1)
+    await news.getLyrics("never gonna give you up", false, 1)
     ```
-
 
     <br>
 <hr>
@@ -81,3 +66,4 @@ const news = require("daily-news-ts")
 Released on the [MIT license](https://choosealicense.com/licenses/mit/).<br>
 See at [NPMJS](https://www.npmjs.com/package/daily-news-ts).<br>
 See at [GITHUB](https://github.com/0zelot/daily-news-ts).<br>
+See [API DOCS](https://open-api.klonba.xyz).
