@@ -1,6 +1,6 @@
 {
   "name": "daily-news-ts",
-  "version": "2.0.2",
+  "version": "2.0.3",
   "description": "Multi-purposal library for displaying google news, weather forecast, cryptocurrency rates, moon phase, etc.",
   "main": "lib/index.js",
   "scripts": {
